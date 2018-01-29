@@ -1,0 +1,360 @@
+﻿dba_users/user_users
+show user
+dba_tablespaces/user_tablespaces
+dba_data_files
+all_tables
+tab = user_tables + user_ssynonyms + user_views
+dba_objects?dba_col_comments?
+grant 赋予权限
+index / view  / sequence / synonym / temporary table / drop
+角色 / 事务 / 连接和会话
+role_sys_privs 
+控制文件 v$controlfile 
+日志v$log / v$logfile / v$log_history
+
+分区 数据块 并行DML 并行查询 
+dba_indexes / user_ind_columns / user_segments
+索引  不可见索引  组合索引 抑制索引 选择性 集群因子 二元高度 直方图
+快速全扫描 跳跃式扫描
+
+会社的放大镜 测试
+
+explain plan for
+index unique scan
+index range scan
+table access full
+index fast full scan
+index skip scan
+bitmap index singe value
+bitmap index range scan
+bitmap index full scan
+bitmap index fast full scan
+
+酢浆草
+羊肚菌
+
+
+pointCut + advice = advicor 
+advicor + origiBean + BeanFactory = naviBean + Proxy  = AOP
+
+JdbcTemplate/dataSource + CRUD = DAO（check/init/deadlock/sessionFactory? 用BeanFactory处理）
+DAO  = ResultSet/Query
+
+CustomeProperty +newInstance + filter= Criteria 
+Criteria  + volcityTemplateEngine / queryExtractor = CriteriaFactory (newInstance/getQuery)
+Criteria(Factory) + 嵌入式 + 模板引擎（Velocity） + filter= CriteriaFactory 
+
+DAO + CriteriaFactory + Query强化= DAC
+
+bean初期化装载ValidatorConfig + ValidateAspect = ValidatorProxyFactory
+DataSourceTransactionManager（dataSource ）  + Aspect = AnnotationTransactionAspect
+
+jersey
+
+@QueryParam
+@DefaultValue
+@FormParam
+@MatrixParam
+@HeaderParam
+@CookieParam
+@BeanParam
+@Context
+Velocity + Java
+com.sun.jersey.spi.container.servlet.ServletContainer
+如果是声明为filter的时候 要加初始化参数的 要么就放在filter最后一个
+因为这个过滤器不会自动把请求转发给下一个
+
+Spring
+
+SpringMVC---JDBCTemplate---Bean管理
+核心 IOC/AOP
+解耦合 切面 事务 方便集成其他框架 降低其他JavaEE API 的使用难度 JDBC Mail 
+BeanFactory --> ApplicationContext(扩展国际化--事件传递--Bean自动装配--不同应用层表现)
+Bean实例化 （无参构造--静态工厂--实例工厂） 11个过程
+https://yemengying.com/2016/07/14/spring-bean-life-cycle/
+注入： p命名空间 普通属性/对象属性/复杂属性
+
+@Component @repository @Service @Control @Scope
+@Value 
+@AutoWired @Qualifiter("XXX")    spring提供主要以类型去找
+@Resource(name="") @Resource("")             javax提供的主要以名字去注入
+
+@PostConstruct @PreDestroy
+
+ @Configuration @Bean  (java bean)
+WebApplicationContextUtils.getWebApplicationContext
+
+AOP 0
+InvocationHandler  jdk动态代理
+MethodInterceptor  cglib代理
+AOP 一动态代理
+ProxyFactoryBean + target + proxyInterface + advice  (advisor)
+advice --> DefaultPointcutAdvisor / RegexpMethodPointcutAdvisor
+AOP 二自動代理
+BeanNameAutoProxyCreator / DefaultAdvisorAutoProxyCreator
+DefaultAdvisorAutoProxyCreator以上都是需要自己写advice类(外加<aop:advisor>)
+AOP 三AspectJ
+@Aspect @Before @AfterReturning @After @AfterThrow @Around @PointCut
+execution("* xxxx.xxx..xx.xx")
+<aop:config> <aop:pointcut> <aop:aspect> <aop:advisor>
+<aop:after> <aop:before> <aop:after-returning> <aop:around> <aop:after-throw>
+Transation
+四个特性  不考虑隔离性会产生三种问题  四种隔离级别规避三种问题
+基础接口 --> PlatformTransationManager -->实现其他具体事务类（JDBC/hibernate..）
+手动事务：
+TransactionManager --> TransactionTemplate 
+声明事务：
+1.原始声明事务 用代理/注入TransactionProxyBeanFactory完成
+2.自动代理 基于切面 <aop:config>+<tx:advice>
+3.注解<tx:annotation-driven transaction-manager="transactionManager"/>
+
+连接池 jdbcdaosupport/hibernatedaosupport/mybitas自己的
+
+Struts2
+请求拦截器（过滤器）StrutsPrepareAndExecuteFilter DefaultActionInvocation
+默认拦截器组struts-default
+主动调用execute()
+返回结果 <result></result>(结果种类XXXX)
+
+default.properties-->struts-default.xml-->struts.xml-->struts.properties(me)-->web.xml
+
+Action配置
+1) <package name namespace extends="struts-default'> 
+2) <action name class method>
+3) Action没有的话 默认ActionSupport
+Action三种书写形式-->  POJO(execute) /  Action implements Action /Action extends ActionSupport
+不写Method 写感叹号（！）动态方法调用
+
+ServletAPI：
+获得ServletAPI里面内容 --> ActionContext / ServletContextAware(你懂的) /ServletActionContext
+
+Result：局部结果（action下的result）/全局结果（package下的global-results）
+结果类型： dispatcher（转发到jsp）/chain（转发到action）/redirect（重定向到jsp）/redirectAction（重定向到Action）/stream(文件上传下载) 〇转到action的话就不用后缀名了（.jsp/.html）
+
+Action封装参数：属性封装 / 模型封装
+1.单属性属性封装忽视太烂了/2.对象属性封装/3.模型封装（只能是一个对象 还必须手动实例化 差劲）/4.复杂类型封装
+〇自己建议用对象属性封装第二种 （可以自己做个万能application对外对象 在后在进行类型控制）~~
+〇前台传入后台的可能：常用类型参数+date+数组+集合
+
+Struts前台类型转换 ： StrutsTypeConverter
+     * 类型装换都是双向的 总前台到后台 / 从后台到前台 （一般来说不需要类型转换 因为可以在前面check掉 了解下）
+     * 最后要注册转换器 全局注册和局部注册
+
+Struts校验：分为【客户端校验】和【服务器校验】
+1）手动 在action中validata()中所有方法进行校验 addFieldError() -->validateFun()只对fun方法进行校验
+2）xml校验 主流 使用xml必须提供get方法 不然怎么得到值？ actionclass-actionname-validation.xml
+<s:fielderror fieldName="user.user_id"/>  FooAction-foo_showp-validation.xml
+<validators>
+	<field name="user.user_id">
+		<field-validator type="required"><message>不能为空</message></field-validator>
+	</field>
+</validators>
+3）自定义校验
+
+Struts国际化 ： 
+全局国际化  -- 要在struts.xml中配置常量  -- 在Action中使用,在jsp中使用,在validation.xml中使用
+this.getText("msg") <s:text name="msg" /> <message key="agemsg"></message>
+Action范围国际化 无需配置 ActionClass.properties
+package范围国际化 package.properties
+临时信息文件（jsp中临时使用）
+
+StrutsInterceptor拦截器:
+Interceptor接口 -- AbstractInterceptor类
+已经有的常用拦截器有 
+modelDriven模型驱动拦截器                 fileUpload文件上传拦截器         params参数解析封装拦截器
+conversionError类型转换错误拦截器    validation请求参数校验拦截器   workflow拦截跳转input视图
+要加入自己的拦截器的话要和defaultStack一起合在一起 而且要注意自定义的拦截器要放在最后面
+1.放在Action里面的Interceptor定义
+2.Interceptor里面加一个interceptor-stack绑定之后 把这个stack设置成默认拦截器
+
+Struts文件上传：
+上传种类 struts.multipart.parser=jakarta 利用common-fileupload技术 还支持cos pell上传技术
+struts.multipart.maxSize 文件上传总大小
+过滤上传文件类型 通过内置的fileuploadInterceptor传参数就行 max/allowType/allowExtensions(deaultStack直接设置加个fileUpload前缀)
+文件上传的错误信息在struts-messages.properties里面可以进行国际化修改
+多文件上传 <form enctype="multipart/form-data" method="post" action="xxxx">
+在模型层接收到的是 xxx文件，xxxContentType文件类型，xxxFileName文件名字 （数组）
+FileUtils.copy  ServletContext.getRealPath
+文件下载原理 服务器读取下载文件 -- 通过Response响应写回 -- 设置ContextType 和 ContentDisposition头信息
+return InputStream,FileInputStream
+
+OGNL
+1.支持对象方法调用 
+2.支持静态类调用（需要开启）
+3.访问OGNL上下文和ActionContext上下文（操作值栈）
+4.支持赋值操作和表达式串联
+5.操作集合
+ValueStack接口的实现类OgnlValueStack就是所谓的值栈（一次请求一个Action一个值栈）
+Root --- List
+OgnlContext --- Map
+值栈被保存到了Request和ActionContext中
+ValueStack.push()加入集合中        ValueStack.set("","")保存到map中 <s:debug>
+取栈中元素
+
+什么是值栈  --  值栈内部结构 -- 值栈的创建 ValueStack与ActionContext 的关系 
+如何获取值栈 -- 向值栈中保存数据 -- 在jsp中获取值栈的数据
+
+struts有2种方式向页面传输数据 1.addFieldError --- addActionError --- addActionMessage
+                                                    2.通过去值栈里面取
+值栈中默认压入的东西 1. Action对象在每次请求的时候通过DefaultActionInvocation的init进行压入
+                                       2. modelDriven的拦截器会将model压入值栈 栈顶
+
+#使用ognl表达式获取数据
+%控制是否解析ongl表达式
+$用于配置文件中使用ognl
+
+
+hibernate
+beanname.hbm.xml   
+class         name table
+id              name column generator 一大推主键生成策略native自动判断 uuid
+property name colnum 
+
+hibernate.cfg.xml / hibernate.properties(没有map映射文件加载  所以要手动自己编写 ) 2者的configuration创建不一样
+driver / url / username / password（provider_class连接池）
+dialect
+show_sql / format_sql / hbm2ddl.auto（create,create-drop,update,validate）
+mapping resource(java实现: configuration.addResource("xxxxx.xx.xx.xx.ClassName.hbm.xml"
+			configuration.addClass(Customer.class);class文件和hbm文件在同一个包下
+))
+-------------------------------|
+configuration                      |
+buildSessionFactory          |
+openSession 数据库全部操|作只用一个sessionFactory 当然 在sessionFactory中可以取出当前session也可以重新创建一个新的session               | session和jdbc中的connection 非线程安全的  
+beginTransaction                |
+session.xxx 处理操作           | 
+------------------------------- |
+ 
+CRUD  ： save / load，get / update（new一个 或者先get再update） / delete 现查后删
+查询集合 ： HQL (query.list()) QBC(criteria.list()) SQL(SQLQuery query.list)
+第二
+持久化类 无参构造器 用于反射创建对象 / 标识属性 / 包装类型 / 不能使用finally 持久化类要生成代理对象的在延迟加载的时候（游离托管状态 / 持久化状态 /瞬时状态）
+
+一级缓存 存在session中集合里面 生命周期和session一样（session.clear/session.evict(Object)/ flush() / refresh(Object)）/ 快照对比之后提交数据库
+select-before-update="true"更新前查询
+
+一对多  数据多的那张表存放外键
+多对多  额外创建一张表存放2张表的外键
+cascade级联操作策略 （一起保存或更新/一起删除）inverse外键维护控制 
+抓取策略 lazy（立即检索/延迟检索） fatch sql的类型 是否子查询分离 会控制sql是否拆分 和 改变样子 
+
+事务 隔离级别 <property name="hibernate.connection.isolation">4</property> 1,2,4,8
+<property name="hibernate.current_session_context_class">thread</property>线程绑定session
+SessionFactory中的getCurrentSession();方法就能唯一session
+
+
+
+jdbc存在的问题
+1.频繁的创建和释放连接 造成系统资源浪费 可以使用连接池解决
+2.sql在代码中硬编码 维护不容易
+3.入力参数硬编码 where条件不定的时候 要改代码 
+4.结果集硬编码 也需要变了就改 最好能POJO
+
+mybatis
+
+1  主配置文件 / session初期化原理  resources+sqlsessionFactorybuilder 产生sessionFactory  |  主配置文件详解
+2  映射配置文件SqlMapping.xml                                                                                                           |
+执行方式 session.insert/session.delete/session.update/session.select*...                                   |  入门开发
+                session.getMapper(Mapper.class)  通过接口完成                                                             |   DAO接口开发
+									               | 
+输入类型 
+简单类型输入 / POJO类型输入 / POJO包装类型输入 （用圆点法取值/el）
+输出类型
+简单类型输出 / POJO类型输出 / POJO列表输出 （list，map，set，sortset）
+
+resultMap 定义关联映射
+1对1 查询 3种
+简单resultMaper实现
+圆点记法的ResultMap实现
+使用嵌套结果ResultMap实现一对一关系映射  <association 
+使用嵌套查询实现一对一关系映射 <association 
+POJO继承也可以
+
+1对多
+使用内嵌结果ResultMap实现一对多映射   <collection
+使用嵌套查询实现一对多关系映射 <collection
+
+整合spring
+1 数据库连接 / 连接池 / 事务 都给spring
+2 spring容器创建 sqlsessionFactory  ●SqlSessionFactoryBean
+3 问spring要session  ● SqlSessionDaoSupport   ● SqlSessionTemplate也可以
+4 mapper代理对象也要ioc  ● 提供接口名字 然后MapperFactoryBean完成代理 返回一个dao对象
+                                                ● 提供包名自动扫描  然后org.mybatis.spring.mapper.MapperScannerConfigurer扫描 变成多个                               			dao对象  Ioc内用接口名去getBean   ● <mybatis:scan/>  ● @MapperScan注解
+
+MyBatis也提供了一些工具如MyBatis Generator(http://www.mybatis.org/generator/) POJO生成工具
+
+java 类的初始化  首先类没有加载过的话 先加载 / 加载过的 直接生成对象 
+                             类生成的时候 先初期化成员变量 然后再执行构造
+继承 成员/方法/构造器  
+先初期化父类  再初期化子类 super
+隐藏的属性 不会发生动态绑定 
+static/finally的方法不会发生动态绑定
+
+表现层框架解决的问题 (编码问题)
+1 如何封装请求调用方式的
+2 如何封装请求参数的 （struts2 3种方式封装 / spring 可以从请求里面取，简单类型取，@requestParam取，POJO，包装POJO）list的传入
+3 请求参数如何类型转化/校验/国际化（自定义参数绑定 ）
+4 文件上传下载都是如何实现的
+5 各自拦截器是如何实现的
+6 如何返回页面 并且回显的 （struts2 数据在值栈中 或者 错误中/ springmvc 在 ModelandView，Model，ModelMap回显） 
+
+整合思路
+Dao层：
+	1、SqlMapConfig.xml，空文件即可，但是需要文件头。
+	2、applicationContext-dao.xml
+		a)数据库连接池
+		b)SqlSessionFactory对象，需要spring和mybatis整合包下的。
+		c)配置mapper文件扫描器。
+
+Service层：
+	1、applicationContext-service.xml包扫描器，扫描@service注解的类。
+	2、applicationContext-trans.xml配置事务。
+
+Controller层：
+	1、Springmvc.xml
+		a)包扫描器，扫描@Controller注解的类。
+		b)配置注解驱动
+		c)配置视图解析器
+
+Web.xml文件：
+	1、配置spring
+	2、配置前端控制器。
+
+
+@RequestMapping("/itemEdit")
+public ModelAndView queryItemById(HttpServletRequest request) 
+@RequestMapping("/itemEdit")
+public String queryItemById(HttpServletRequest request, Model model)
+@RequestMapping("/itemEdit")
+public String queryItemById(HttpServletRequest request, ModelMap model)
+@RequestMapping("/itemEdit")
+public String queryItemById(int id, ModelMap model)
+@RequestMapping("/itemEdit")
+public String queryItemById(@RequestParam(value = "itemId", required= true, defaultValue = "1") Integer id,ModelMap modelMap)
+@RequestMapping("/updateItem")
+public String updateItem(Item item)
+@RequestMapping("/queryItem")
+public String queryItem(QueryVo queryVo)
+@RequestMapping("queryItem")
+public String queryItem(QueryVo queryVo, Integer[] ids)
+@RequestMapping("queryItem")
+public String queryItem(QueryVo queryVo) queryVo里面有List<Object>进行list传参
+
+@RequestMapping(value="item")
+@RequestMapping("/item")
+@RequestMapping(value = { "itemList", "itemListAll" })
+public ModelAndView queryItemList()
+
+@RequestMapping(value = "itemList",method=RequestMethod.POST)
+返回ModelAndView
+返回void + request.getRequestDispatcher / response.getWriter().print
+返回 字符串 + 逻辑 视图名(jspreturn"itemList") /  Redirect重定向(return"redirect:/itemEdit.action?itemId=") / forward转发return"forward:/itemEdit.action"
+
+
+
+
+
+
+
+
+
