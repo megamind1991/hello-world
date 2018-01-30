@@ -19,3 +19,24 @@
 19. 内部类可以引用它的包含类的成员吗？有没有什么限制？
 20. String s="Hello"; s = s+"word!"; 这两行代码执行后，原始的String对象中的内容到底变了没有？
 
+21. ArrayList和Vector的区别
+22. HashMap和Hashtable的区别
+23. List和Map区别
+24. List，Set，Map是否继承自Collection接口？
+25. List，Map，Set三个接口，存取元素时，各有什么特点？
+26. 说出ArrayList，Vector，LinkedList的存储性能和特征
+27. 去掉一个Vector集合中重复的元素
+28. Collection和Collections的区别
+29. Set里的元素是不能重复的，那么用什么方法来区分重复与否呢？是用==还是equals()?它们有何区别？
+30. 你所知道的集合类都有哪些？主要方法？
+
+31. String s = new String("xyz"); 创建了几个StringObject？是否可以继承String类？
+32. String和StringBuffer的区别
+33. 下面这条语句一共创建了多少个对象：String s ="a"+"b"+"c"+"d";
+34. try{}里面有一个return语句，那么紧跟在这个try后的finally{}里的code会不会被执行，什么时候被执行，在return前还是后？
+35. final，finally，finalize的区别。
+36. 运行时异常与一般异常有何异同？
+37. error和exception有什么区别？
+38. 简单说说Java中的异常处理机制的简单原理和应用
+39. Java中堆和栈有什么区别?
+40. 能将int强制转换为byte类型的变量吗？如果该值大于byte类型的范围，将会出现什么现象？
