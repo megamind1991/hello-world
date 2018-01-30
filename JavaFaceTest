@@ -9,3 +9,13 @@
 9.  使用final关键词修饰一个变量时，是引用不能变，还是引用的对象不能变？
 10. 静态变量和实例变量的区别？
 11. 是否可以从一个static方法内部发出对非static方法的调用
+12. Integer与int的区别
+13. Math.round(11.5)等于几？Math.round(-11.5)等于几？
+14. Overload和Override的区别？Overload的方法是否可以改变返回值的类型？
+15. 接口是否可继承接口？抽象类是否可实现接口？抽象类是否可以继承具体类？抽象类中是否可以有静态的main方法？
+16. Java中实现多态的机制是什么？
+17. abstractclass和interface语法上有什么区别？
+18. abstract的method是否可同时是static，是否可同时是native，是否可同时是synchronized？
+19. 内部类可以引用它的包含类的成员吗？有没有什么限制？
+20. String s="Hello"; s = s+"word!"; 这两行代码执行后，原始的String对象中的内容到底变了没有？
+
