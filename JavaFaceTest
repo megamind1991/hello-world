@@ -40,3 +40,66 @@
 38. 简单说说Java中的异常处理机制的简单原理和应用
 39. Java中堆和栈有什么区别?
 40. 能将int强制转换为byte类型的变量吗？如果该值大于byte类型的范围，将会出现什么现象？
+
+41. a.hashCode()有什么用？与a.equal(b) 有什么关系？
+42. 字节流与字符流的区别
+43. 什么是Java序列化，如何实现java序列化？或者请解释serializable接口的作用。
+44. 描述一下JVM加载Class文件的原理机制？
+45. heap和stack有什么区别。
+46. GC是什么？为什么要有GC？
+47. 垃圾回收的优点和原理。并考虑2种回收机制。
+48. 垃圾回收器的基本原理是什么？垃圾回收器可以马上回收内存吗？有什么办法主动通知虚拟机进行垃圾回收？
+49. Java中，throw和throws有什么区别
+50. java中会存在内存泄露吗，请简单描述。
+
+51. 说一说Servlet的生命周期？
+52. Servlet API中forward()与redirect()的区别？
+53. request.getAttribute()和request.getParameter()有何区别？
+54. jsp静态包含和动态包含的区别
+55. MVC的各个部分都有哪些技术来实现？如何实现？
+56. jsp有哪些内置对象？作用分别是什么？
+57. Http中，get和post方法的区别
+58. 什么是Cookie？Session和Cookie有什么区别？
+59. jsp和servlet的区别，共同点，各自应用的范围？
+60. tomcat容器是如何创建servlet类实例？用到了什么原理？
+
+61. JDBC访问数据库的基本步骤是什么
+62. 说说preparedStatement和Statement的区别
+63. 说说事务的概念，在JDBC编程中处理事务的步骤
+64. 数据库连接池的原理。为什么要使用连接池。
+65. JDBC的脏读是什么？哪种数据库隔离级别能防止脏读？
+66. 什么是幻读，哪种隔离级别可以防止幻读？
+67. JDBC的DriverManager是用来做什么的？
+68. execute，executeQuery，executeUpdate的区别是什么？
+69. SQL查询出来的结果分页展示一般怎么做？
+70. JDBC的ResultSet是什么？
+
+71. 谈谈你对Struts的理解。
+72. 谈谈你对Hibernate的理解。
+73. 谈谈你对Spring的理解。
+74. 谈谈Struts的优缺点
+75. iBatis与Hibernate有什么不同？
+76. 在hibernate进行多表查询每个表中各取几个字段，也就是说查询出来的结果集没有一个实体类与之对应如何解决？
+77. 介绍一下hibernate的二级缓存
+78. JDO是什么？
+79. hibernate的一对多和多对一双向关联的区别？
+80. hibernate是如何延迟加载的？
+81. 使用Spring框架的好处是什么？
+82. ApplicationContext通常的实现是什么？
+83. 什么是Spring的依赖注入？有哪些方法进行依赖注入
+84. 什么是Spring beans？
+85. 解释Spring支持的几种bean的作用域。
+86. 解释Spring框架中bean的生命周期。
+87. 在Spring中如何注入一个java集合？
+88. 解释不同方式的自动装配。
+89. Spring框架的事务管理有哪些优点？
+90. 什么是基于Java的Spring注解配置？给一些注解的例子
+91. 什么是ORM？
+92. hibernate中SessionFactory是线程安全的吗？Session是线程安全的吗？（2个线程能共享同一个Session吗）
+93. Session的save(),update(),merge(),lock(),saveOrUpdate()和persist()方法分别是做什么的？有什么区别？
+94. 阐述Session加载实体对象的过程。
+95. Mybatis中使用#和$书写占位符有什么区别？
+96. 解释一下Mybatis中命名空间（namespace）的作用。
+97. Mybatis中的动态SQL是什么意思?
+98. 
+
