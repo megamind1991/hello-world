@@ -101,5 +101,20 @@
 95. Mybatis中使用#和$书写占位符有什么区别？
 96. 解释一下Mybatis中命名空间（namespace）的作用。
 97. Mybatis中的动态SQL是什么意思?
-98. 
+98. JDBC编程有哪些不足之处，Mybatis是如何解决这些问题的？
+99. Mybatis与hibernate有哪些不同？
+100.简单的说下Mybatis的一级缓存和二级缓存？
+
+121.什么是线程？
+122.线程和进程有什么区别？
+123.如何在Java中实现线程？
+124.Java关键字volatile与synchronized作用与区别？
+125.有哪些不同的线程生命周期？
+126.你对线程优先级的理解是什么？
+127.什么是死锁deadlock？如何分析和避免死锁？
+128.什么是线程安全？Vector是一个线程安全类吗？
+129.Java中如何停止一个线程？
+130.什么是ThreadLocal？
+131.Sleep()，suspend()和wait()之间有什么区别？
+132.
 
