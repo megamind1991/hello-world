@@ -75,9 +75,9 @@
 70. JDBC的ResultSet是什么？
 
 71. 谈谈你对Struts的理解。
-######72. 谈谈你对Hibernate的理解。
+###### 72. 谈谈你对Hibernate的理解。
 73. 谈谈你对Spring的理解。
-######74. 谈谈Struts的优缺点
+###### 74. 谈谈Struts的优缺点
 75. iBatis与Hibernate有什么不同？
 76. 在hibernate进行多表查询每个表中各取几个字段，也就是说查询出来的结果集没有一个实体类与之对应如何解决？
 77. 介绍一下hibernate的二级缓存
