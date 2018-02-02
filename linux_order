@@ -1,0 +1,28 @@
+cd 
+mkdir
+ls
+
+
+find
+mv
+cp
+rm
+
+touch
+cat/more/less/tail
+vi/vim
+rm -rf
+
+tar -zcvf
+tar -xvf
+
+pwd
+grep
+|
+ps -ef
+kill
+ifconfig
+netstat -an
+
+rpm
+
