@@ -25,4 +25,4 @@ ifconfig
 netstat -an
 
 rpm
-
+chmod u   =rwx ,g=rw ,o=r aaa  .tx
