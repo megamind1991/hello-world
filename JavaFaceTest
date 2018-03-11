@@ -157,3 +157,115 @@
 168.什么是可重入锁？ReentrantLock？
 169.读写锁可以用于什么应用场景？
 
+一.基础知识
+1.集合类：list和set比较，各自的子类比较（ArraryList Vector, LinkedList, HashSet , TreeSet）
+2.HashMap的底层实现，之后会问ConcurrentHashMap的底层实现
+3.如何实现HashMap顺序存储；可以参考LinkedHashMap的底层实现
+4.HashTable和ConcurrentHashMap的区别
+5.String,StringBuffer和StringBuilder的区别
+6.Object的方法有哪些：比如有wait方法，为什么会有；
+7.wait和sleep的区别，必须理解
+8.JVM的内存结构，JVM的算法
+9.强引用，软引用和弱引用的区别
+10.数组在内存中如何分配
+11.用过哪些设计模式 手写一个
+12.springmvc的核心是什么，请求的流程是怎么处理的，控制反转怎么实现的；
+13.spring里面的aop的原理是什么
+14.mybatis如何处理结果集： 反射，建议看源码
+15.java的多态表现在哪里
+16.接口有什么用
+17.说说http和https协议
+18.cookie和session的区别，分布式环境怎么保存客户的状态
+19.git？svn？
+20.写出一段栈溢出 堆溢出的代码
+21.ThreadLocal可以用来共享数据嘛
+
+二 IO
+1.BIO NIO AIO 的区别
+2.NIO框架 DUBBO的实现原理
+
+三 算法
+1.java中常说的堆和栈，分别是什么数据结构，另外 为什么要分为堆和栈来储存数据。
+2.TreeMap如何插入数据：二叉树的左旋，右旋，双旋
+3.一个排序之后的数组，插入数据，可以用什么方法 二分法 时间复杂度
+4.平衡二叉树的时间复杂度
+5.Hash算法和二叉树算分别什么时候用
+6.图的广度优先算法和深度优先算法 详见jvm中垃圾回收实现
+
+四 多线程相关
+1.说说阻塞队列的实现： 可以参考ArrayBlockingQuence的底层实现（锁和同步都行）
+2.进程通讯的方式：消息队列，共享内存 信号量 socket通讯等
+3.用过并发包的哪些类
+4.什么地方用了多线程
+5.Excutors可以产生哪些线程池；
+6.为什么要用线程池
+7.volatile关键字的用法： 使多线程中的变量可见
+
+五 数据库相关
+1. mysql优化经验
+2. mysql的语句优化，使用什么工具
+3. mysql的索引分类
+4. mysql存储引擎有哪些
+5. 说说事务的特性 和 隔离级别
+6. 悲观锁和乐观锁的区别 是怎么实现的
+
+六 mq
+1. mq的原理是什么 
+2. mq如何保证实时性
+3. mq的持久化是怎么做的
+
+
+六.nosql相关（主要是redis）:
+
+1）redis和memcache的区别；
+
+2）用redis做过什么；
+
+3）redis是如何持久化的：rdb和aof；
+
+4）redis集群如何同步；
+
+5）redis的数据添加过程是怎样的：哈希槽；
+
+6）redis的淘汰策略有哪些；
+
+7）redis有哪些数据结构；
+
+
+七.zookeeper:
+
+1）zookeeper是什么；
+
+2）zookeeper哪里用到；
+
+3）zookeeper的选主过程；
+
+4）zookeeper集群之间如何通讯；
+
+5）你们的zookeeper的节点加密是用的什么方式；
+
+6）分布式锁的实现过程；
+
+
+
+八.linux相关：
+
+1）linux常用的命令有哪些；
+
+2）如何获取java进程的pid；
+
+3）如何获取某个进程的网络端口号；
+
+4）如何实时打印日志；
+
+5）如何统计某个字符串行数；
+
+
+
+九.设计与思想：
+
+1）重构过代码没有？说说经验；
+
+2）一千万的用户实时排名如何实现；
+
+3）五万人并发抢票怎么实现；
