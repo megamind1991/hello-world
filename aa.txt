@@ -354,6 +354,17 @@ public ModelAndView queryItemList()
 
 
 
+@RequestMapping("updateItem")
+public String updateItemById(Item item, MultipartFile pictureFile) throws Exception         文件上传
+
+@RequestMapping("testJson")
+public@ResponseBody Item testJson(@RequestBody Item item)                                           JSON
+
+@RequestMapping("item/{id}") 声明请求的url{xxx}叫做占位符                                                  Restful风格
+
+@RequestMapping("item/{id}") 
+@ResponseBody                         --------------------------------------> 不走视图解析器了
+public Item queryItemById(@PathVariable() Integer id)
 
 
 
